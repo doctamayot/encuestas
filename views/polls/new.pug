@@ -1,0 +1,27 @@
+extends ../index
+
+block content
+  .container
+    if error
+      .row.justify-content-center
+        .col-sm-8
+          .alert.alert-danger
+            h4= error
+    .row.justify-content-center
+      .col-sm-4
+        h1 New Poll
+        br
+        form(role='form', action="/polls",method="post")
+          .form-group
+            input.form-control(type='text', name="title", placeholder='Enter title', required)
+          .form-group
+            input.form-control(type='area', name="description", placeholder='Description', required)
+          h4 Options
+            .form-group
+              input.form-control(type='text', name="options[0][name]", placeholder='Opcion 1', required)
+            .form-group
+              input.form-control(type='text', name="options[1][name]", placeholder='Opcion 2', required)
+
+          button.btn.btn-default(type='submit') Submit&nbsp;
+          a(href='/')
+            button.btn.btn-primary(type="button") Cancel

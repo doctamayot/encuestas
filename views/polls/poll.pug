@@ -1,0 +1,18 @@
+extends ../index
+
+block content
+  .container.mt-4
+    .row.justify-content-center
+      .col-sm-6
+        .card
+          .card-header
+            .card-title= poll.description
+          .card-body
+            form(role='form' action='/polls/' + poll._id + '/vote', method="post")
+              each option, i in poll.options
+                .form-group
+                  .form-check
+                    input(type="radio" id="option-" + i name="options" value=i).form-check-input
+                    label.form-check-label(for="option-" + i)= option.name
+          
+              button.btn.btn-primary(type="submit") Vote

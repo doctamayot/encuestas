@@ -1,0 +1,21 @@
+extends ../index
+
+block content
+  .container
+    if error
+      .row.justify-content-center
+        .col-sm-8
+          .alert.alert-danger
+            h4= error
+    .row.justify-content-center
+      .col-sm-4
+        h1 Register Page
+        br
+        form(role='form', action="/register",method="post")
+          .form-group
+              input.form-control(type='text', name="username", placeholder='Enter Username', required)
+          .form-group
+            input.form-control(type='password', name="password", placeholder='Password', required)
+          button.btn.btn-default(type='submit') Submit&nbsp;
+          a(href='/')
+            button.btn.btn-primary(type="button") Cancel

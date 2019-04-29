@@ -1,0 +1,31 @@
+extends ../index
+
+block content
+  #fb-root
+  script
+    //include ../../public/javascripts/facebook.js
+    //include ../../public/javascripts/twitter.js
+  .container.mt-4
+    .col-sm-12
+      .row.justify-content-center
+        .col-sm-12
+          .row.justify-content-around
+            a(href="/") Back
+            .group-icons
+              a(href='#' id="share-link")
+                i.fas.fa-link
+              a(href='https://twitter.com/intent/tweet?url=' + path data-link= path)
+                i.fab.fa-twitter
+              a(href='#' id='share-facebook' data-link= path)
+                i.fab.fa-facebook
+        .col-sm-6.mt-3
+          .row.justify-content-center
+            .card
+              .card-header
+                h4.card-title= poll.title
+                p= poll.description
+              .card-body
+                each option, i in poll.options
+                  .progress
+                    .progress-bar.progress-bar-animated.progress-bar-striped(role="progressbar" style="width: " + poll.votesPercentage(i) + "%;" aria-valuenow= poll.votesPercentage(i) aria-valuemin="0" aria-valuemax="100")= poll.votesPercentage(i) + '%'  
+                  p.card-title= option.name
