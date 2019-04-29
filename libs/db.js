@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
     
     module.exports = function Connection() {
         if(!db){
-            db = mongoose.createConnection('mongodb://localhost:27017/polls');
+            db = mongoose.createConnection(process.env.MONGODB);
             useMongoClient: true;
         }
         return db;
