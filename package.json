@@ -23,7 +23,6 @@
     "should": "^13.2.3"
   },
   "devDependencies": {
-    "mocha": "^6.1.4",
     
   },
   "scripts": {
