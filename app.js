@@ -51,9 +51,9 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/shop',{ u
     process.exit();
 });
 
-const port = process.env.PORT || 8000;
-app.listen(port, ()=>{
-  console.log("App is running on port " + port)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, ()=>{
+  console.log(`App is running on port ${ PORT }`);
 })
 
 // catch 404 and forward to error handler
