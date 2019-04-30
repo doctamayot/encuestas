@@ -21,10 +21,7 @@
     "serve-favicon": "^2.5.0",
     "should": "^13.2.3"
   },
-  "engines": {
-    "node": "5.0.0",
-    "npm": "4.6.1"
-  },
+  
   "scripts": {
     "start": "node app.js"
   },
