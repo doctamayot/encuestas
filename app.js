@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const passport = require('passport');
+const favicon = require('serve-favicon');
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 const app = express();
