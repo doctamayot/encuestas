@@ -44,17 +44,15 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost:27017/shop',{ useNewUrlParser: true 
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/shop',{ useNewUrlParser: true 
 }).then(() => {
     console.log("Successfully connected to the database");
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-
-app.set('port', process.env.PORT || 3000 )
-app.listen(app.get('port'), ()=>{
-  console.log(`API REST corriendo en ${app.get('port')}`)
+app.listen(process.env.PORT || 3000, ()=>{
+  console.log('API REST corriendo en http://localhost')
 })
 
 // catch 404 and forward to error handler
