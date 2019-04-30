@@ -51,7 +51,9 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/shop',{ u
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
-app.listen(process.env.PORT || 3000, ()=>{
+
+const port = process.env.PORT || 8000;
+app.listen(port, ()=>{
   console.log('API REST corriendo en http://localhost')
 })
 
