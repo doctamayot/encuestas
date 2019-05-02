@@ -49,7 +49,10 @@ exports.createSession = (req, res, next) => {
 };
 
 // destroy the session
-exports.destroy = (req, res, next) => {
+exports.destroySession = (req, res, next) => {
   req.logout();
   res.redirect('/');
+  !user
 };
+
+

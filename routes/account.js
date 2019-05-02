@@ -5,5 +5,5 @@ module.exports = (app) => {
     app.post('/register', accounts.create);    
     app.get('/login', accounts.newSession);   
     app.post('/login', accounts.createSession);   
-    app.get('logout', accounts.destroy);
+    app.get('/logout', accounts.destroySession);
   }

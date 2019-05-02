@@ -3,8 +3,8 @@ extends ../index
 block content
   #fb-root
   script
-    //include ../../public/javascripts/facebook.js
-    //include ../../public/javascripts/twitter.js
+    include ../../public/javascripts/facebook.js
+    include ../../public/javascripts/twitter.js
   .container.mt-4
     .col-sm-12
       .row.justify-content-center
@@ -29,3 +29,7 @@ block content
                   .progress
                     .progress-bar.progress-bar-animated.progress-bar-striped(role="progressbar" style="width: " + poll.votesPercentage(i) + "%;" aria-valuenow= poll.votesPercentage(i) aria-valuemin="0" aria-valuemax="100")= poll.votesPercentage(i) + '%'  
                   p.card-title= option.name
+        
+        
+  script
+    include ../../public/javascripts/share.js
